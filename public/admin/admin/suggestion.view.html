@@ -1,0 +1,70 @@
+<div ng-controller="suggestController">
+
+    <div class="x_content">
+        <br/>
+
+        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+            <h2>Add suggestion :</h2>
+
+            <br>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Suggestion content <span class="required">*</span>
+            </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea ng-model="suggest.content" style="; width:100%; height:100%" rows="4" cols="50" type="text"
+                              name="suggestion" id="suggestion">
+                        </textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Type</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <select class="form-control" ng-model="suggest.types">
+                        <option value="Misfire">Misfire</option>
+                        <option value="Components">Components</option>
+                        <option value="Catalyst">Catalyst</option>
+                        <option value="Evap System">Evap System</option>
+                        <option value="AC Refrigerant">AC Refrigerant</option>
+                        <option value="Oxygen Sensors">Oxygen Sensors</option>
+                        <option value="Oxygen Sensors Heater">Oxygen Sensors Heater</option>
+                        <option value="EGR System">EGR System</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"> <a ng-click="save()" class="btn btn-primary pull-right "> save</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+    </fieldset>
+    <legend>Suggestions</legend>
+    <div class="x_content">
+
+
+        <table class="table">
+            <thead>
+            <tr id="firstrow">
+                <th>suggestion</th>
+                <th>type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="suggest in suggests">
+                <td>{{suggest.content}}</td>
+                <td>{{suggest.types}}</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

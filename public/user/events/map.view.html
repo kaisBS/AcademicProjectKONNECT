@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="css/materialize.min.css"/>
+<headerdirective></headerdirective>
+<div class="row" ng-controller="MapController">
+    <div class="col s6 m6 l6" style="height: 60vh;">
+        <img src="./images/board.png" class="responsive-img" />
+        <div style="position:relative;margin-top:-50%;color:white;font-size:20px;left: -20px;">
+            <div class="col s4 m4 l4 center-align">
+                00
+            </div>
+            <div class="col s4 m4 l4 center-align">
+                {{user.car.last_diagnostics.rpm}}
+            </div>
+            <div class="col s4 m4 l4 center-align">
+                {{user.car.last_diagnostics.fuel_rate}}
+            </div>
+        </div>
+        <div style="position:relative;margin-top:30%;color:white;font-size:20px;left: -20px">
+            <div class="col s4 m4 l4 center-align">
+                {{user.car.last_diagnostics.engine_temperature}}
+            </div>
+            <div class="col s4 m4 l4 center-align">
+                00
+            </div>
+            <div class="col s4 m4 l4 center-align">
+                {{user.car.last_diagnostics.battery}}
+            </div>
+        </div>
+    </div>
+    <div class="col s6 m6 l6">
+        <div id="map"></div>
+    </div>
+    <div class="col s6 m6 l6 card indigo lighten-5">
+        <div class="col s12 m12 l12 right-align">
+            <button class="waves-effect waves-light btn"> Generate</button>
+        </div>
+        <div class="col s12 m12 l12">
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="number" placeholder="Fuel Rate" ng-model="user.car.last_diagnostics.fuel_rate" />
+            </div>
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="checkbox" class="filled-in" id="misfire" ng-model="user.car.last_diagnostics.misfire" />
+                <label for="misfire">Misfire</label>
+            </div>
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="checkbox" class="filled-in" id="ac" ng-model="user.car.last_diagnostics.acRefgigerant" />
+                <label for="ac">AcRefrigerant</label>
+            </div>
+        </div>
+        <div class="col s12 m12 l12">
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="number" placeholder="Battery" ng-model="user.car.last_diagnostics.battery" />
+            </div>
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="checkbox" class="filled-in" id="components" ng-model="user.car.last_diagnostics.components" />
+                <label for="components">Components</label>
+            </div>
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="checkbox" class="filled-in" id="oxygen" ng-model="user.car.last_diagnostics.oxygen_sensor" />
+                <label for="oxygen">Oxygen Sensor</label>
+            </div>
+        </div>
+        <div class="col s12 m12 l12">
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="number" placeholder="RPM" ng-model="user.car.last_diagnostics.rpm" />
+            </div>
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="checkbox" class="filled-in" id="catalyst" ng-model="user.car.last_diagnostics.catalyst" />
+                <label for="catalyst">Catalyst</label>
+            </div>
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="checkbox" class="filled-in" id="oxygenheater" ng-model="user.car.last_diagnostics.oxygen_sensor_heater" />
+                <label for="oxygenheater">Oxygen Sensor Heater</label>
+            </div>
+        </div>
+        <div class="col s12 m12 l12">
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="number" placeholder="Speed" ng-model="speed" />
+            </div>
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="checkbox" class="filled-in" id="evap" ng-model="user.car.last_diagnostics.evap_system" />
+                <label for="evap">Evap System</label>
+            </div>
+            <div class="col s4 m4 l4 input-field left-align">
+                <input type="checkbox" class="filled-in" id="egr" ng-model="user.car.last_diagnostics.egr_system" />
+                <label for="egr">EGR System</label>
+            </div>
+        </div>
+        <div class="col s12 m12 l12 left-align">
+            <button class="waves-effect waves-light btn"> Change Speed</button>
+        </div>
+    </div>
+    <div class="col s6 m6 l6 card blue lighten-2">
+
+        <button class="waves-effect waves-light btn" ng-click="start()">Start</button>
+        <button class="waves-effect waves-light btn" ng-click="reset()">Reset</button>
+    </div>
+</div>

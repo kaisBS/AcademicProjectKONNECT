@@ -1,0 +1,149 @@
+<headerdirective></headerdirective>
+
+<div ng-controller="eventsController">
+    <div>
+        <div class='navbar navbar-default navbar-static-top'>
+            <div class='container-fluid'>
+
+            </div>
+            <div class='container-fluid'>
+                <div class='row'>
+
+                    <div class='col-md-10'>
+                        <noscript>
+                            <div class='alert alert-info'>
+                                <h4>Your JavaScript is disabled</h4>
+                                <p>Please enable JavaScript to view the map.</p>
+                            </div>
+                        </noscript>
+                        <style>
+                            .switch {
+                                position: relative;
+                                display: inline-block;
+                                width: 60px;
+                                height: 34px;
+                            }
+
+                            .switch input {display:none;}
+
+                            .slider {
+                                position: absolute;
+                                cursor: pointer;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background-color: #ccc;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                            }
+
+                            .slider:before {
+                                position: absolute;
+                                content: "";
+                                height: 26px;
+                                width: 26px;
+                                left: 4px;
+                                bottom: 4px;
+                                background-color: white;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                            }
+
+                            input:checked + .slider {
+                                background-color: #2196F3;
+
+                            }
+
+                            input:focus + .slider {
+                                box-shadow: 0 0 1px #2196F3;
+                            }
+
+                            input:checked + .slider:before {
+                                -webkit-transform: translateX(26px);
+                                -ms-transform: translateX(26px);
+                                transform: translateX(26px);
+                            }
+
+                            /* Rounded sliders */
+                            .slider.round {
+                                border-radius: 34px;
+                            }
+
+                            .slider.round:before {
+                                border-radius: 50%;
+                            }
+
+                        </style>
+                        <style>
+                            #map_canvas {
+                                height: 70%;
+                                margin-left: 9em;         
+                            }</style>
+
+
+                        <div id="map_canvas">
+                            <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
+                                <ui-gmap-polyline ng-repeat="p in polylines" path="p.path" stroke="p.stroke" visible='p.visible'
+                                                  geodesic='p.geodesic' fit="false" editable="p.editable" draggable="p.draggable" icons='p.icons'></ui-gmap-polyline>
+                                <ui-gmap-circle ng-repeat="c in circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+                                                visible="c.visible" geodesic="c.geodesic" editable="c.editable" draggable="c.draggable" clickable="c.clickable" control="c.control"></ui-gmap-circle>
+
+                                <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'">
+                                </ui-gmap-markers>
+
+                                <ui-gmap-markers models="randomMarkers2" coords="'self'" icon= "icon">
+                                </ui-gmap-markers>
+                            </ui-gmap-google-map>
+                        </div>
+                    </div>       <div class='col-md-10' style="margin-left:9em;">
+                    <div class='well'>
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <img ng-src="images/acc.png" height="50em" width="50em"  style="margin-left:10em;"/>
+                                <label class="switch">
+
+                                    <input id="lastaccidents" ng-click="searchAccidents()" type="checkbox">
+
+                                    <div class="slider"></div>
+                                </label>
+                                <img ng-src="images/path.png"  height="50em" width="50em"  style="margin-left:10em;"/>
+                                <label class="switch">
+                                    <input id="latestpath" ng-click="searchPath()" type="checkbox" >
+                                    <div class="slider"></div>
+                                </label>
+                                <img ng-src="images/stop.png"  height="50em" width="50em"  style="margin-left:10em;"/>
+                                <label class="switch">
+                                    <input  id="laststopsign" type="checkbox"  ng-click="searchStopSigns()"  height="50em" width="50em"  style="margin-left:10em;">
+
+                                    <div class="slider"></div>
+                                </label>
+                                <img ng-src="images/speed.png" height="50em" width="50em" style="margin-left:10em;"/>
+                                <label class="switch">
+
+                                    <input id="lastspeed" type="checkbox" ng-click="searchSpeed()">
+
+                                    <div class="slider"></div>
+                                </label>
+                          
+                            </div>
+                            <div style="margin-top:5em; margin-left:28em;">
+                                       <a class='btn btn-primary col-md-6' id='reset' ng-click="reset()">
+                            <i class='glyphicon glyphicon-repeat'></i>
+                            Reset
+                        </a>
+                                </div>
+                        </div>
+                        </div>
+
+                        
+
+                       
+
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>

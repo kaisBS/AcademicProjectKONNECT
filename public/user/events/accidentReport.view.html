@@ -1,0 +1,22 @@
+<style>
+    #map {
+        height: 80vh;
+        width: 100%;
+    }
+
+    #options {
+        height: 20vh;
+        width: 100%;
+    }
+</style>
+<div class="row" ng-controller="AccidentController">
+    <headerdirective></headerdirective>
+    <h1 class="col-md-offset-5">Report a recent accident</h1>
+    <div>
+        <div id="map"></div>
+    </div>
+
+
+        <button ng-click="save()" class="btn btn-primary col-md-12">save</button>
+
+</div>

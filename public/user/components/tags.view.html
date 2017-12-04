@@ -1,0 +1,14 @@
+<div ng-controller="eventsController"><div>
+    <!-- Nothing special this directive shows the github kitten I <3 github-->
+   <div> <div style="text-align:center;">TAGS (Directive)</div> 
+      <br>
+       <div style="text-align:center;">
+      <input ng-model="event.tags">
+      <button ng-click="addTag()">Add Tag</button>
+      <p ng-if="event.tags" ng-repeat="event in events">{{event.tags | customfilter}}
+      
+
+    </div>
+   </div>
+</div>                
+</div>

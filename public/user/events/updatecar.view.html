@@ -1,0 +1,253 @@
+<headerdirective></headerdirective>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+<!-- iCheck -->
+<link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+<!-- Morris chart -->
+<link rel="stylesheet" href="plugins/morris/morris.css">
+<!-- jvectormap -->
+<link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+<!-- Date Picker -->
+<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+<!-- Daterange picker -->
+<link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+<!-- bootstrap wysihtml5 - text editor -->
+<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<script language="javascript">function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}</script>
+<style>
+    .tabcontent {
+        -webkit-animation: fadeEffect 1s;
+        animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    }
+
+    @-webkit-keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    /* Style the tab */
+    div.tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+    div.tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+
+    /* Change background color of buttons on hover */
+    div.tab button:hover {
+        background-color: #ddd;
+    }
+    #car{
+        background-image: url("../app/images/car.png");
+        margin:auto;
+        width:42em;
+    }
+
+    /* Create an active/current tablink class */
+    div.tab button.active {
+        background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+    .user-row {
+        margin-bottom: 14px;
+    }
+
+    .user-row:last-child {
+        margin-bottom: 0;
+    }
+
+
+
+
+    /* Tooltip container */
+    .tooltipp {
+        position: relative;
+        display: inline-block;
+        z-index: 99;
+
+    }
+
+    /* Tooltip text */
+    .tooltipp .tooltipptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 999;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltipp:hover .tooltipptext {
+        visibility: visible;
+    }
+
+
+
+
+    .dropdown-user {
+        margin: 13px 0;
+        padding: 5px;
+        height: 100%;
+    }
+
+    .dropdown-user:hover {
+        cursor: pointer;
+    }
+
+    .table-user-information > tbody > tr {
+        border-top: 1px solid rgb(221, 221, 221);
+    }
+
+    .table-user-information > tbody > tr:first-child {
+        border-top: 0;
+    }
+
+
+    .table-user-information > tbody > tr > td {
+        border-top: 0;
+    }
+    .toppad
+    {margin-top:20px;
+    }
+    .status{
+        font-size: 20px;
+    }
+    .problem{
+        color:black;
+        position: absolute;
+        margin-top: -20 em;
+    }
+</style>
+<div ng-controller="profilController">
+    <aside class="main-sidebar" style="background-color:#222222; margin-top:1.4em; ">
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p style="color:white;">{{user.login}}</p>
+                </div>
+            </div>
+            <!-- search form -->
+
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+
+                <li class="active treeview">
+
+                    <ul class="treeview-menu">
+                        <a href="#/updateprofil" >Edit Personal Information</a>
+                    </ul>
+                </li>
+
+
+
+            </ul>
+        </section>
+
+      <div ng-controller="updatecarController"> 
+
+     <div class="container" style="margin-left:20em;">
+
+        <div  >
+   
+   
+          <div class="" style="float:left; width:70em;">
+
+            
+    <div class=" " style="float:center;">
+        <frameset>
+        <legend>Update Car information</legend>
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Registration code of your car</td>
+                        <td><input ng-model="user.car.registration_number" type="text" name="reg" id="reg"/></td>
+                      </tr>
+                      <tr>
+                        <td> Buying date:</td>
+                        <td><input ng-model="user.car.buying_date" type="text" name="BD" id="BD"/></td>
+                      </tr>
+                      <tr>
+                        <td>Fabrication of Birth</td>
+                        <td><input ng-model="user.car.fabrication_birth" type="text" name="FB" id="FB" /></td>
+                      </tr>
+                   
+                         <tr>
+                             <tr>
+                        <td>Power:</td>
+                        <td><input ng-model="user.car.power" type="text" name="Pwr" id="Pwr" /></td>
+                      </tr>
+                   
+                     
+                                                
+                    </tbody>
+                  </table>
+                  </frameset>
+                  <input ng-click="update()" type="button" class="btn btn-primary" value="Save Changes"/>
+                  
+                </div>
+          </div>
+            
+            
+        </div>
+
+    </div>
+	</div>

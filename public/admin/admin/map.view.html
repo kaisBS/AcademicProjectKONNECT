@@ -1,0 +1,26 @@
+<style>
+    #map {
+        height: 80vh;
+        width: 100%;
+    }
+
+    #options {
+        height: 20vh;
+        width: 100%;
+    }
+</style>
+<div class="row" ng-controller="MapController">
+
+    <div>
+        <div id="map"></div>
+    </div>
+    <div id="options">
+        <div class="form-group" >
+            <label style="margin-left:600px;"> <input type="radio" class="form-control" ng-model="sign" name="sign" value ="stop">Stop</label>
+            <label > <input type="radio" class="form-control" ng-model="sign" name="sign" value ="speed">Speed</label>
+            <br>
+            <input style="margin-left:565px;"type="text" ng-model="speedvalue">
+        </div>
+        <button  style="margin-left:620px; ng-click="save()">save</button>
+    </div>
+</div>
